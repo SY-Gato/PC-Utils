@@ -1,10 +1,13 @@
 @echo off
 echo Boot Fix
 echo Attempting to fix MBR...
-bootsec /fixmbr
+bootrec /fixmbr
 echo Status Above
 echo Attempting to fix Boot...
-bootsec /fixboot
+bootrec /fixboot
 echo Status Above
-echo Completed.
+echo Attempting to rebuild BCD...
+bootred /rebuildbcd
+echo Status Above
+echo Completed
 pause
